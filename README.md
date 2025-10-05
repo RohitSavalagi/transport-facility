@@ -1,59 +1,154 @@
-# TransportFacility
+# **Transport Facility Management**
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.4.
+## **Overview**
 
-## Development server
+Transport Facility Management is a simple Angular web application that allows employees to **add, view, and book rides** provided by other employees. The system ensures rides are **only for the current day**, with a **time window of ±60 minutes** for booking.
 
-To start a local development server, run:
+This application was developed as a **front-end assignment** and uses **MockAPI.io** as a cloud backend for storing rides. The front-end is deployed on **Netlify**.
+
+---
+
+## **Features**
+
+* **Dashboard** with two main options:
+
+  * **Add Ride** – create a new ride.
+  * **Pick Ride** – view and book available rides.
+
+* **Add Ride Form**
+
+  * Employee ID (unique, required)
+  * Vehicle Type (Bike/Car)
+  * Vehicle No (required)
+  * Vacant Seats (required)
+  * Time (today only, future time)
+  * Pickup Point (required)
+  * Destination (required)
+
+* **Ride List / Booking**
+
+  * Only rides **for today** are shown.
+  * Only rides within **±60 minutes** of current time are shown.
+  * **Vehicle type filter** (Bike/Car).
+  * Cannot book your own ride.
+  * Vacant seats are updated on booking.
+  * Cannot book the same ride twice.
+
+* **Header**
+
+  * Company name **Infrrd**
+  * Clickable → always routes to home/dashboard.
+
+* **Responsive UI**
+
+  * Horizontal cards on desktop
+  * Stacks vertically on mobile
+  * Empty state template when no rides are available
+
+---
+
+## **Technologies Used**
+
+* **Front-end:** Angular 15+
+* **Forms:** Reactive Forms + Form Validation
+* **HTTP:** HttpClient
+* **Mock Backend:** [MockAPI.io](https://mockapi.io/)
+* **Deployment:** [Netlify](https://www.netlify.com/)
+* **Styling:** SCSS, Flexbox for responsive design
+
+---
+
+## **Project Structure**
+
+```
+src/
+├─ app/
+│  ├─ components/
+│  │  ├─ header/          # Header component
+│  │  ├─ add-ride/        # Add Ride form component
+│  │  ├─ ride-list/       # Ride List / booking component
+│  │  └─ dashboard/       # Landing page with Add/Pick buttons
+│  ├─ services/
+│  │  └─ ride.service.ts  # API service to connect with MockAPI
+│  └─ app-routing.module.ts
+├─ assets/
+│  └─ no-rides.png        # Empty state illustration
+```
+
+---
+
+## **Installation / Run Locally**
+
+1. Clone the repository:
+
+```bash
+git clone <repo-url>
+cd transport-facility
+```
+
+2. Install dependencies:
+
+```bash
+npm install
+```
+
+3. Start the Angular development server:
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+4. Open `http://localhost:4200` in your browser.
 
-## Code scaffolding
+> Note: Ensure `ride.service.ts` points to the **MockAPI.io endpoint** for live CRUD operations.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+---
 
-```bash
-ng generate component component-name
-```
+## **Deployment**
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+The app is deployed on **Netlify**.
 
-```bash
-ng generate --help
-```
+* **Live URL:** [https://<your-netlify-app>.netlify.app](https://<your-netlify-app>.netlify.app)
 
-## Building
+Steps for deployment:
 
-To build the project run:
+1. Build Angular for production:
 
 ```bash
-ng build
+ng build --prod
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+2. Drag & drop `dist/<project-name>/` into Netlify’s deploy section.
+3. Ensure `_redirects` file exists (for Angular routing):
 
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
+```
+/* /index.html 200
 ```
 
-## Running end-to-end tests
+---
 
-For end-to-end (e2e) testing, run:
+## **Usage**
 
-```bash
-ng e2e
-```
+1. **Dashboard** → choose **Add Ride** or **Pick Ride**.
+2. **Add Ride** → fill the form with your ride details → submit.
+3. **Pick Ride** → see available rides filtered by **vehicle type** and **time window**.
+4. **Book Ride** → enter your Employee ID → click **Book** → vacant seats update.
+5. **Header** → click **Infrrd** to return to the dashboard at any time.
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+---
 
-## Additional Resources
+## **Time Validation & Logic**
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+* Rides can only be **added for today** and **from current time onwards**.
+* Booking only shows rides **within ±60 minutes** of current time.
+* Employees cannot book their own rides or book the same ride twice.
+* Time is stored as a **full Date string** to simplify comparisons.
+
+---
+
+## **Credits**
+
+* Developed by: **Rohit Savalagi**
+* Front-end assignment using Angular 15+
+* Mock backend powered by **MockAPI.io**
+* Deployed using **Netlify**
