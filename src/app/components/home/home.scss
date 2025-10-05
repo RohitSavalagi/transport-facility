@@ -1,0 +1,27 @@
+.dashboard {
+  text-align: center;
+  margin-top: 100px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 50px;
+  flex-wrap: wrap;
+}
+
+.big-btn {
+  font-size: 24px;
+  padding: 20px 40px;
+  border: none;
+  border-radius: 10px;
+  background-color: #1976d2;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.big-btn:hover {
+  background-color: #125aa1;
+}

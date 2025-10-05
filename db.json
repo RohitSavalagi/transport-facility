@@ -1,0 +1,24 @@
+{
+  "rides": [
+    {
+      "id": "c33d",
+      "employeeId": "EMP010",
+      "vehicleType": "Bike",
+      "vehicleNo": "KA01KG2233",
+      "vacantSeats": 1,
+      "time": "10:00",
+      "pickupPoint": "Taverekere BTM layout, Bengaluru",
+      "destination": "BTM 2nd stage"
+    },
+    {
+      "id": "cfae",
+      "employeeId": "EMP101",
+      "vehicleType": "Bike",
+      "vehicleNo": "KA01KG2233",
+      "vacantSeats": 3,
+      "time": "Sun Oct 05 2025 23:11:00 GMT+0530 (India Standard Time)",
+      "pickupPoint": "Tavereker BTM Layout",
+      "destination": "asdASD "
+    }
+  ]
+}

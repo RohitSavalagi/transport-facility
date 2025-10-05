@@ -1,0 +1,54 @@
+<div class="form-container">
+  <h2>Add New Ride</h2>
+
+  <form [formGroup]="rideForm" (ngSubmit)="onSubmit()">
+
+    <label>Employee ID</label>
+    <input type="text" formControlName="employeeId" />
+    <div class="error" *ngIf="rideForm.get('employeeId')?.touched && rideForm.get('employeeId')?.invalid">
+      Employee ID is required
+    </div>
+
+    <label>Vehicle Type</label>
+    <select formControlName="vehicleType">
+      <option value="">Select Vehicle</option>
+      <option value="Bike">Bike</option>
+      <option value="Car">Car</option>
+    </select>
+    <div class="error" *ngIf="rideForm.get('vehicleType')?.touched && rideForm.get('vehicleType')?.invalid">
+      Vehicle type is required
+    </div>
+
+    <label>Vehicle No</label>
+    <input type="text" formControlName="vehicleNo" />
+    <div class="error" *ngIf="rideForm.get('vehicleNo')?.touched && rideForm.get('vehicleNo')?.invalid">
+      Vehicle No is required
+    </div>
+
+    <label>Vacant Seats</label>
+    <input type="number" formControlName="vacantSeats" />
+    <div class="error" *ngIf="rideForm.get('vacantSeats')?.touched && rideForm.get('vacantSeats')?.invalid">
+      Must be at least 1 seat
+    </div>
+
+    <label>Time</label>
+    <input type="time" formControlName="time" />
+    <div class="error" *ngIf="rideForm.get('time')?.touched && rideForm.get('time')?.invalid">
+      Time is required
+    </div>
+
+    <label>Pick-up Point</label>
+    <input type="text" formControlName="pickupPoint" />
+    <div class="error" *ngIf="rideForm.get('pickupPoint')?.touched && rideForm.get('pickupPoint')?.invalid">
+      Pickup point is required
+    </div>
+
+    <label>Destination</label>
+    <input type="text" formControlName="destination" />
+    <div class="error" *ngIf="rideForm.get('destination')?.touched && rideForm.get('destination')?.invalid">
+      Destination is required
+    </div>
+
+    <button type="submit" [disabled]="rideForm.invalid">Add Ride</button>
+  </form>
+</div>
