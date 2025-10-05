@@ -108,7 +108,7 @@ ng serve
 
 The app is deployed on **Netlify**.
 
-* **Live URL:** [https://<your-netlify-app>.netlify.app](https://<your-netlify-app>.netlify.app)
+* **Live URL:** [[text](https://transport-facility-infrrd.netlify.app/home)](https://transport-facility-infrrd.netlify.app/home)
 
 Steps for deployment:
 
