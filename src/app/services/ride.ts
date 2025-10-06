@@ -30,6 +30,6 @@ export class Ride {
   }
 
   updateRide(id: number, ride: Partial<Ride>): Observable<Ride> {
-    return this.http.patch<Ride>(`${this.apiUrl}/${id}`, ride);
+    return this.http.put<Ride>(`${this.apiUrl}/${id}`, ride);
   }
 }
