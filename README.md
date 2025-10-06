@@ -71,8 +71,6 @@ src/
 │  ├─ services/
 │  │  └─ ride.service.ts  # API service to connect with MockAPI
 │  └─ app-routing.module.ts
-├─ assets/
-│  └─ no-rides.png        # Empty state illustration
 ```
 
 ---
@@ -108,7 +106,7 @@ ng serve
 
 The app is deployed on **Netlify**.
 
-* **Live URL:** [[text](https://transport-facility-infrrd.netlify.app/home)](https://transport-facility-infrrd.netlify.app/home)
+* **Live URL:** [[link](https://transport-facility-infrrd.netlify.app)](https://transport-facility-infrrd.netlify.app)
 
 Steps for deployment:
 
